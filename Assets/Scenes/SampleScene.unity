@@ -2017,7 +2017,7 @@ Transform:
   m_GameObject: {fileID: 951493443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.61, y: 2.13, z: -13.14007}
+  m_LocalPosition: {x: -9.305, y: 2.13, z: -2.833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3046,7 +3046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efc5a7f161df8740a5dba33bbf8cad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSController
-  playerCamera: {fileID: 330585546}
+  playerCamera: {fileID: 0}
   mouseSensitivity: 2
   verticalLookLimit: 80
 --- !u!1 &1410425582

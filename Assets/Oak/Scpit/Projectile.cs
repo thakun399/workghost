@@ -16,8 +16,22 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        // เคลื่อนที่ไปตามทิศทาง
-        transform.position += direction * speed * Time.deltaTime;
+        float moveDistance = speed * Time.deltaTime;
+
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, moveDistance))
+        {
+            if (hit.collider.CompareTag("Ghost"))
+            {
+                GhostHealth ghostHealth = hit.collider.GetComponentInParent<GhostHealth>();
+                if (ghostHealth != null)
+                    ghostHealth.TakeDamage(damage);
+
+                Destroy(gameObject);
+                return;
+            }
+        }
+
+        transform.position += direction * moveDistance;
     }
 
     public void SetDirection(Vector3 dir)
