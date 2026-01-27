@@ -3132,7 +3132,7 @@ MonoBehaviour:
   playerCamera: {fileID: 330585546}
   reflectSpeed: 15
   parryEffect: {fileID: 7226583673155636403, guid: a2ab56839e1c9504ea9d141e95d0b16b, type: 3}
-  parrySound: {fileID: 0}
+  parrySound: {fileID: 8300000, guid: d005a2efdae35e94e9969788961e9a31, type: 3}
 --- !u!114 &1393652377
 MonoBehaviour:
   m_ObjectHideFlags: 0
