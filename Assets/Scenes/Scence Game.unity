@@ -463,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_flush_toilet_0122084147_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81ba9fb9565368a46985794d8e82f233, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -751,7 +755,7 @@ GameObject:
   - component: {fileID: 536249505}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -905,7 +909,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f1147db953b7f4c42be6d1e873e620ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1134,6 +1138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_urinal_0122085016_texture (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c622f4e3e1d8e945af1046ffab79942, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1197,7 +1205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 039e6273fddbf354e9cf78527faa8337, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55ce743de5144184cb3856145ad92317, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1243,7 +1251,7 @@ GameObject:
   - component: {fileID: 639598415}
   m_Layer: 0
   m_Name: BMG
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1374,7 +1382,7 @@ GameObject:
   - component: {fileID: 717643458}
   m_Layer: 0
   m_Name: t
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1486,7 +1494,7 @@ GameObject:
   - component: {fileID: 742349986}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2017,7 +2025,7 @@ GameObject:
   - component: {fileID: 1071222771}
   m_Layer: 0
   m_Name: light
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2188,7 +2196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f1147db953b7f4c42be6d1e873e620ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2257,6 +2265,22 @@ PrefabInstance:
     - target: {fileID: 2120448680670777659, guid: 58f7f7ae82f845141b18b034f48b5fdc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025918832784229439, guid: 58f7f7ae82f845141b18b034f48b5fdc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1393652375}
+    - target: {fileID: 3025918832784229439, guid: 58f7f7ae82f845141b18b034f48b5fdc, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 805875178543562115, guid: 85e0a212d35dcd944847bb9ee25326d5, type: 3}
+    - target: {fileID: 7249345427512655204, guid: 58f7f7ae82f845141b18b034f48b5fdc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249345427512655204, guid: 58f7f7ae82f845141b18b034f48b5fdc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.692
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2409,6 +2433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147423319}
   - component: {fileID: 1147423318}
+  - component: {fileID: 1147423320}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2444,6 +2469,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147423320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147423317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db219bf3b67db24e8d71a50fbb13cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveManager
+  ghostPrefab: {fileID: 0}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentWave: 3
+  enemiesPerWave: 3
+  timeBetweenSpawns: 1
+  timeBetweenWaves: 3
 --- !u!1 &1165935700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,7 +2504,7 @@ GameObject:
   - component: {fileID: 1165935701}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2645,7 +2691,7 @@ GameObject:
   - component: {fileID: 1199801958}
   m_Layer: 0
   m_Name: BG
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2696,7 +2742,7 @@ GameObject:
   - component: {fileID: 1232738732}
   m_Layer: 0
   m_Name: wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2860,7 +2906,7 @@ MonoBehaviour:
   - {fileID: 562963851}
   - {fileID: 1105123933}
   - {fileID: 2126261208}
-  fullHeart: {fileID: 21300000, guid: f066317ddbdc6a24c9cc1fa8dcfdec16, type: 3}
+  fullHeart: {fileID: 21300000, guid: f1147db953b7f4c42be6d1e873e620ed, type: 3}
   emptyHeart: {fileID: 21300000, guid: eebd537b0ecf25c4a9446b8d273d2c01, type: 3}
   gameOverPanel: {fileID: 1754010444}
 --- !u!136 &1393652372
@@ -3007,7 +3053,7 @@ GameObject:
   - component: {fileID: 1410425583}
   m_Layer: 0
   m_Name: wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3390,7 +3436,7 @@ GameObject:
   - component: {fileID: 1636649025}
   m_Layer: 0
   m_Name: wall (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3632,6 +3678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_urinal_0122085016_texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c622f4e3e1d8e945af1046ffab79942, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3651,7 +3701,7 @@ GameObject:
   - component: {fileID: 1851411559}
   m_Layer: 0
   m_Name: wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3762,7 +3812,7 @@ GameObject:
   - component: {fileID: 1917000408}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3873,7 +3923,7 @@ GameObject:
   - component: {fileID: 1963568501}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4038,6 +4088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_urinal_0122085016_texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c622f4e3e1d8e945af1046ffab79942, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4111,6 +4165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meshy_AI_urinal_0122085016_texture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c622f4e3e1d8e945af1046ffab79942, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4173,7 +4231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f1147db953b7f4c42be6d1e873e620ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
