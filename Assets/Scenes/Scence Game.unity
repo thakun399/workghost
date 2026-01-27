@@ -524,6 +524,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4586142945950441551, guid: 26b2c9cb97c54ad4bae2f0bcd040431b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1393652375}
+    - target: {fileID: 4586142945950441551, guid: 26b2c9cb97c54ad4bae2f0bcd040431b, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 6108683581836611729, guid: d001d64f4a6bbc4459a8f15bb501e4f4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2885,7 +2893,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.27785218, b: 0, a: 1}
   m_Intensity: 10
   m_Range: 5
   m_SpotAngle: 30
@@ -3628,7 +3636,7 @@ Transform:
   m_GameObject: {fileID: 1636649024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7041852, z: -0, w: -0.71001637}
-  m_LocalPosition: {x: -15.5123005, y: 3.1838, z: -7.01647}
+  m_LocalPosition: {x: -22.3, y: 3.1838, z: -7.01647}
   m_LocalScale: {x: 20.058537, y: 6.416251, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4164,11 +4172,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8cb3c634f9b34ba4ab8d85a3c03be75b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
