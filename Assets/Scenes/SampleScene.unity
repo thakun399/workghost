@@ -1043,7 +1043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -390, y: 138}
+  m_AnchoredPosition: {x: -681, y: 322}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562963851
@@ -1126,7 +1126,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594216666}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &594216669
 Camera:
   m_ObjectHideFlags: 0
@@ -2129,7 +2129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273, y: 138}
+  m_AnchoredPosition: {x: -564, y: 322}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105123933
@@ -2234,13 +2234,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: "fatGuyAttack\u0E2D\u0E31\u0E19\u0E43\u0E2B\u0E21\u0E48"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
+      propertyPath: m_TagString
+      value: Ghost
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1185206042}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1720302977}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720302981}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720302980}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720302979}
   m_SourcePrefab: {fileID: 100100000, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
 --- !u!1 &1142255641
 GameObject:
@@ -2611,6 +2627,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1185206041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185206042}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1185206042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185206041}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.717, z: 0.505}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1720302978}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232738731
 GameObject:
@@ -3330,7 +3377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326, y: 165}
+  m_AnchoredPosition: {x: 25, y: 339}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1636649024
@@ -3471,6 +3518,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1720302978 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d7d58245d16660468d2e8226a126033, type: 3}
+  m_PrefabInstance: {fileID: 1113874135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1720302979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720302976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.5389912, z: 1}
+  m_Center: {x: 0, y: 0.8170324, z: -0}
+--- !u!114 &1720302980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720302976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730c6f6882c13e2419c94b2d9b8bb62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostHealth
+  maxHealth: 1
+  deathEffect: {fileID: 0}
+  deathSound: {fileID: 0}
+  scoreValue: 100
+--- !u!114 &1720302981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720302976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfdb6de7f6e23442bac6c8de480d7f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostAI
+  player: {fileID: 1393652375}
+  projectilePrefab: {fileID: 8059776167827579651, guid: a1a3c883526e004438bc41bf5fda1032, type: 3}
+  shootPoint: {fileID: 1185206042}
+  shootInterval: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionRange: 50
+  aimLine: {fileID: 0}
+  lineDuration: 0.1
 --- !u!1 &1754010444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,7 +4245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -149, y: 137}
+  m_AnchoredPosition: {x: -440, y: 321}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126261208
