@@ -1,25 +1,28 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class WaveData
 {
-    public int enemyCount;        // จำนวนศัตรูใน Wave นี้
-    public float spawnInterval;   // เวลาห่างระหว่างเกิด
-    public int bonusHealth;       // เพิ่ม HP ศัตรูใน Wave นี้
+    [Header("Enemy Settings")]
+    public GameObject[] enemyPrefabs;   
+    public int enemyCount;             
+    public float spawnInterval;         
+    public int bonusHealth;             
 }
 
 public class WaveManager : MonoBehaviour
 {
-    [Header("Enemy")]
-    public GameObject ghostPrefab;
-    public Transform[] spawnPoints;
-
     [Header("Wave Settings")]
     public WaveData[] waves;
     public int currentWave = 1;
     public float timeBetweenWaves = 3f;
 
+    [Header("Spawn Points")]
+    public Transform[] spawnPoints;
+
+    private List<Transform> availablePoints = new List<Transform>();
     private int enemiesAlive = 0;
     private bool spawning = false;
 
@@ -28,20 +31,23 @@ public class WaveManager : MonoBehaviour
         StartCoroutine(StartWave());
     }
 
+    
     IEnumerator StartWave()
     {
-        spawning = true;
-
         int waveIndex = currentWave - 1;
+
         if (waveIndex >= waves.Length)
         {
-            Debug.Log("ALL WAVES CLEARED");
+            Debug.Log("ALL WAVES CLEARED!");
             yield break;
         }
 
         WaveData wave = waves[waveIndex];
 
         Debug.Log("START WAVE " + currentWave);
+
+        PrepareSpawnPoints();
+        spawning = true;
 
         for (int i = 0; i < wave.enemyCount; i++)
         {
@@ -52,20 +58,46 @@ public class WaveManager : MonoBehaviour
         spawning = false;
     }
 
+    
+    void PrepareSpawnPoints()
+    {
+        availablePoints.Clear();
+        availablePoints.AddRange(spawnPoints);
+    }
+
+    
     void SpawnEnemy(WaveData wave)
     {
-        Transform point = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject ghost = Instantiate(ghostPrefab, point.position, Quaternion.identity);
+        if (availablePoints.Count == 0)
+        {
+            Debug.LogWarning("No available spawn points!");
+            return;
+        }
+
+        
+        Transform point =
+            availablePoints[Random.Range(0, availablePoints.Count)];
+
+        
+        availablePoints.Remove(point);
+
+        
+        GameObject prefab =
+            wave.enemyPrefabs[Random.Range(0, wave.enemyPrefabs.Length)];
+
+        GameObject enemy =
+            Instantiate(prefab, point.position, Quaternion.identity);
 
         enemiesAlive++;
 
-        GhostHealth health = ghost.GetComponent<GhostHealth>();
+       
+        GhostHealth health = enemy.GetComponent<GhostHealth>();
         if (health != null)
         {
             health.SetBonusHealth(wave.bonusHealth);
         }
     }
-
+    
     public void EnemyDied()
     {
         enemiesAlive--;
@@ -75,9 +107,10 @@ public class WaveManager : MonoBehaviour
             StartCoroutine(NextWave());
         }
     }
-
+    
     IEnumerator NextWave()
     {
+        Debug.Log("WAVE CLEARED");
         yield return new WaitForSeconds(timeBetweenWaves);
         currentWave++;
         StartCoroutine(StartWave());
