@@ -113,7 +113,7 @@ public class ParrySystem : MonoBehaviour
             projectile.speed = reflectSpeed;
 
             // เปลี่ยน Tag เป็น "ReflectedProjectile" เพื่อไม่ให้ทำร้าย Player
-            other.tag = "ReflectedProjectile";
+            other.gameObject.tag = "ReflectedProjectile";
 
             // Effect พิเศษ (ถ้ามี)
             if (parryEffect != null)

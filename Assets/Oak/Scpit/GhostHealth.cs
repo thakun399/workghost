@@ -3,7 +3,8 @@ using UnityEngine;
 public class GhostHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    public int maxHealth = 1;
+    public int baseHealth = 1;  
+    public int healthPerWave = 1;
     private int currentHealth;
 
     [Header("Death Effects")]
@@ -15,8 +16,14 @@ public class GhostHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
         audioSource = GetComponent<AudioSource>();
+
+        WaveManager wave = FindObjectOfType<WaveManager>();
+        int w = wave != null ? wave.currentWave : 1;
+
+        currentHealth = baseHealth + (w - 1) * healthPerWave;
+
+        Debug.Log("Ghost Spawn | Wave " + w + " | HP = " + currentHealth);
     }
 
     public void TakeDamage(int damage)
@@ -52,8 +59,13 @@ public class GhostHealth : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(deathSound, transform.position);
         }
+        
+        WaveManager waveManager = FindObjectOfType<WaveManager>();
+        if (waveManager != null)
+        {
+            waveManager.EnemyDied();
+        }
 
-        // ทำลายผี
         Destroy(gameObject);
     }
 }
