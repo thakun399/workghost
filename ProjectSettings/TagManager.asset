@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Wall
   - Ghost
-  - 'ReflectedProjectile '
+  - ReflectedProjectile
   layers:
   - Default
   - TransparentFX
