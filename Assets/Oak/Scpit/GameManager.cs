@@ -3,29 +3,36 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    void Update()
+    public static GameManager instance;
+    public GameObject startPanel;
+
+    void Awake()
     {
-        // กด R เพื่อ Restart (ทดสอบ)
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartGame();
-        }
+        instance = this;
+
+        // เปิดเกมมา หยุดเกมก่อน
+        Time.timeScale = 1;
+        startPanel.SetActive(true);
     }
 
+    // ปุ่ม Start
+    public void StartGame()
+    {
+        startPanel.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    // ปุ่ม Restart
     public void RestartGame()
     {
-        Debug.Log("========== RESTARTING GAME ==========");
-        
-        // รีเซ็ตเวลา
-        Time.timeScale = 1f;
-        
-        // โหลด Scene ใหม่
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void QuitGame()
+    // เรียกตอนแพ้ (ถ้ามี)
+    public void GameOver()
     {
-        Debug.Log("Quit Game");
-        Application.Quit();
+        startPanel.SetActive(true);
+        Time.timeScale = 1;
     }
 }
