@@ -1,6 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
+public class WaveData
+{
+    public int enemyCount;        // จำนวนศัตรูใน Wave นี้
+    public float spawnInterval;   // เวลาห่างระหว่างเกิด
+    public int bonusHealth;       // เพิ่ม HP ศัตรูใน Wave นี้
+}
+
 public class WaveManager : MonoBehaviour
 {
     [Header("Enemy")]
@@ -8,9 +16,8 @@ public class WaveManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     [Header("Wave Settings")]
+    public WaveData[] waves;
     public int currentWave = 1;
-    public int enemiesPerWave = 3;
-    public float timeBetweenSpawns = 1f;
     public float timeBetweenWaves = 3f;
 
     private int enemiesAlive = 0;
@@ -24,29 +31,41 @@ public class WaveManager : MonoBehaviour
     IEnumerator StartWave()
     {
         spawning = true;
-        Debug.Log("Wave " + currentWave + " Start");
 
-        int enemiesToSpawn = enemiesPerWave + (currentWave - 1) * 2;
-
-        for (int i = 0; i < enemiesToSpawn; i++)
+        int waveIndex = currentWave - 1;
+        if (waveIndex >= waves.Length)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(timeBetweenSpawns);
+            Debug.Log("ALL WAVES CLEARED");
+            yield break;
+        }
+
+        WaveData wave = waves[waveIndex];
+
+        Debug.Log("START WAVE " + currentWave);
+
+        for (int i = 0; i < wave.enemyCount; i++)
+        {
+            SpawnEnemy(wave);
+            yield return new WaitForSeconds(wave.spawnInterval);
         }
 
         spawning = false;
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(WaveData wave)
     {
-        Transform spawnPoint =
-            spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform point = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        GameObject ghost = Instantiate(ghostPrefab, point.position, Quaternion.identity);
 
-        Instantiate(ghostPrefab, spawnPoint.position, Quaternion.identity);
         enemiesAlive++;
+
+        GhostHealth health = ghost.GetComponent<GhostHealth>();
+        if (health != null)
+        {
+            health.SetBonusHealth(wave.bonusHealth);
+        }
     }
 
-    // 🔥 สำคัญมาก
     public void EnemyDied()
     {
         enemiesAlive--;
@@ -59,9 +78,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator NextWave()
     {
-        Debug.Log("Wave Clear!");
         yield return new WaitForSeconds(timeBetweenWaves);
-
         currentWave++;
         StartCoroutine(StartWave());
     }
